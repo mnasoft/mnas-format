@@ -1,8 +1,6 @@
-;;;; mnas-format.lisp
-
-(in-package #:mnas-format)
-
-;;; "mnas-format" goes here. Hacks and glory await!
+(defpackage mnas-format
+  (:use :cl))
+(in-package :mnas-format)
 
 (defun round-val (a &optional (out nil))
   (cond
@@ -18,6 +16,7 @@
     ((and (numberp a ))                    (format out "~A" (string-trim " " (format nil "~6,3E" a))))
     (T                                     (format out "~A"    a))))
 
+(export 'round-val)
 
 (defun round-val_2 (a &optional (out nil))
   (cond
@@ -32,3 +31,5 @@
     ((and (numberp a ) (< (abs a) 100000)) (format out "~A" (string-trim " " (format nil "~,0F" a))))
     ((and (numberp a ))                    (format out "~A" (string-trim " " (format nil "~,3E" a))))
     (T                                     (format out "~A"    a))))
+
+(export 'round-val_2)

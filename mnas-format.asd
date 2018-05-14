@@ -1,10 +1,17 @@
-;;;; mnas-format.asd
+#|
+  This file is a part of mnas-format project.
+|#
 
-(asdf:defsystem #:mnas-format
-  :description "Describe mnas-format here"
-  :author "Your Name <your.name@example.com>"
-  :license "Specify license here"
-  :serial t
-  :components ((:file "package")
-               (:file "mnas-format")))
-
+(defsystem "mnas-format"
+  :version "0.1.0"
+  :author ""
+  :license ""
+  :depends-on ()
+  :components ((:module "src"
+                :components
+                ((:file "mnas-format"))))
+  :description ""
+  :long-description
+  #.(read-file-string
+     (subpathname *load-pathname* "README.markdown"))
+  :in-order-to ((test-op (test-op "mnas-format-test"))))
