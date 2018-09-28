@@ -3,6 +3,10 @@
 (in-package #:mnas-format)
 
 (defun round-val (a &optional (out nil))
+  "Пример использования:
+ (loop for i in '(1000000 100000 10000 1000 100 10 1 0.1 0.01  ) do
+   (format t \"~A~%\" (mnas-format:round-val (* i 0.1234567891))))
+"
   (cond
     ((and (numberp a ) (= a 0))            (format out "~A" (string-trim " " (format nil "~4,2F" a))))
     ((and (numberp a ) (< (abs a) 0.01))   (format out "~A" (string-trim " " (format nil "~6,3E" a))))
@@ -16,9 +20,13 @@
     ((and (numberp a ))                    (format out "~A" (string-trim " " (format nil "~6,3E" a))))
     (T                                     (format out "~A"    a))))
 
-(export 'round-val)
-
 (defun round-val_2 (a &optional (out nil))
+    "Пример использования:
+ (loop for i in '(1000000 100000 10000 1000 100 10 1 0.1 0.01  ) do
+   (format t \"~A~%\" (mnas-format:round-val_2 (* i 0.1234567891))))
+ (loop for i in '(1000000 100000 10000 1000 100 10 1 0.1 0.01  ) do
+   (format t \"~A~%\" (mnas-format:round-val_2 (* i 0.1))))
+"
   (cond
     ((and (numberp a ) (= a 0))            (format out "~A" (string-trim " " (format nil "~,2F" a))))
     ((and (numberp a ) (< (abs a) 0.01))   (format out "~A" (string-trim " " (format nil "~,3E" a))))
@@ -32,4 +40,3 @@
     ((and (numberp a ))                    (format out "~A" (string-trim " " (format nil "~,3E" a))))
     (T                                     (format out "~A"    a))))
 
-(export 'round-val_2)
