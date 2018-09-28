@@ -1,6 +1,6 @@
-(defpackage mnas-format
-  (:use :cl))
-(in-package :mnas-format)
+;;;; mnas-format.lisp
+
+(in-package #:mnas-format)
 
 (defun round-val (a &optional (out nil))
   (cond
