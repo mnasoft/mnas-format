@@ -1,5 +1,0 @@
-# Mnas-Format
-
-## Usage
-
-## Installation
