@@ -2,8 +2,6 @@
 
 (in-package #:mnas-format)
 
-(annot:enable-annot-syntax)
-
 (round-foo 12345678)
 
 (*
@@ -16,8 +14,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-@export
-@annot.doc:doc
+(export 'round-foo )
+(defun round-foo (value &key (out nil) (digits 4) (zero-trailing t) (dp-trailing   t) (decimal-point "."))
 "@b(Пример использования:)
 @b(Переменые:)
 @begin(list)
@@ -35,7 +33,6 @@
 => 1.235e+5 12346. 1235. 123.5 12.35 1.235 0.1235 0.01235 1.235e-3 1.235e-4 1.235e-5
 @end(code)
 "
-(defun round-foo (value &key (out nil) (digits 4) (zero-trailing t) (dp-trailing   t) (decimal-point "."))
   (typecase value
     (integer (format out "~d" value))
     (string  (format out "~a" value))
