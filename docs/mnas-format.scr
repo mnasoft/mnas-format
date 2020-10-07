@@ -1,0 +1,24 @@
+@begin(section) @title(Обзор)
+
+This is where you explain what your project does.
+
+@end(section)
+
+@begin(section)
+@title(API)
+@cl:with-package[name="mnas-format"](
+ @cl:doc(function round-1d-list)
+ @cl:doc(function round-val )
+ @cl:doc(function round-2d-list )
+ @cl:doc(function round-val_2 )
+ @cl:doc(function round-val-10 ))
+@end(section)
+
+
+
+
+
+
+
+
+		
