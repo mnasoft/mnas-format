@@ -1,24 +1,22 @@
 @begin(section) @title(Обзор)
 
-This is where you explain what your project does.
-
-@end(section)
+ @b(Описание:) система @b(mnas-format) предназначена
+ для получения округленного представления величин. С её помощью можно
+ получить округленное представление для: 
+ @begin(list) 
+ @item(отдельного значения;) 
+ @item(одномерного списка (1d-list) значений;) 
+ @item(двумерного списка  (2d-list) значений.) 
+ @end(list)@end(section)
+@begin(section) @title(MNAS-FORMAT)
 
 @begin(section)
-@title(API)
-@cl:with-package[name="mnas-format"](
- @cl:doc(function round-1d-list)
- @cl:doc(function round-val )
- @cl:doc(function round-2d-list )
- @cl:doc(function round-val_2 )
- @cl:doc(function round-val-10 ))
+ @title(Функции)
+ @cl:with-package[name="MNAS-FORMAT"](
+  @cl:doc(function round-val-10)
+  @cl:doc(function round-val_2)
+  @cl:doc(function round-2d-list)
+  @cl:doc(function round-val)
+  @cl:doc(function round-1d-list))
 @end(section)
-
-
-
-
-
-
-
-
-		
+@end(section)

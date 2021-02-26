@@ -1,8 +1,17 @@
 ;;;; mnas-format.lisp
 
-(in-package #:mnas-format)
+(defpackage #:mnas-format
+  (:use #:cl ) 
+  (:export round-val
+	   round-val_2
+           round-val-10
+           round-1d-list
+           round-2d-list
+   ))
 
-(export 'round-val )
+;;;; (declaim (optimize (compilation-speed 0) (debug 3) (safety 0) (space 0) (speed 0)))
+
+(in-package #:mnas-format)
 
 (defun round-val (a &optional (out nil))
   "@b(Пример использования:)
@@ -12,10 +21,10 @@
 => 1.235e+5 12346. 1235. 123.5 12.35 1.235 0.1235 0.01235 1.235e-3 1.235e-4 1.235e-5
 @end(code)
 "
-#|
- (loop :for i :in '(1000000 100000 10000 1000 100 10 1 0.1 0.01 0.001 0.0001) :do
-   (format t "~A~%" (mnas-format:round-val (* i 0.1234567891))))
-|#
+  #|
+  (loop :for i :in '(1000000 100000 10000 1000 100 10 1 0.1 0.01 0.001 0.0001) :do ;
+  (format t "~A~%" (mnas-format:round-val (* i 0.1234567891)))) ;
+  |#
   (cond
     ((and (numberp a ) (= a 0))            (format out "~A" (string-trim " " (format nil "~4,2F" a))))
     ((and (numberp a ) (< (abs a) 0.01))   (format out "~A" (string-trim " " (format nil "~6,3E" a))))
@@ -29,19 +38,19 @@
     ((and (numberp a ))                    (format out "~A" (string-trim " " (format nil "~6,3E" a))))
     (T                                     (format out "~A"    a))))
 
-(export 'round-val_2 )
+
 (defun round-val_2 (a &optional (out nil))
-"@b(Пример использования:)
+  "@b(Пример использования:)
 @begin[lang=lisp](code)
  (loop :for i :in '(1000000 100000 10000 1000 100 10 1 0.1 0.01 0.001 0.0001 ) :do
    (format t \"~A \" (mnas-format:round-val_2 (* i 0.1234567891))))
 => 1.235e+5 12346. 1235. 123.5 12.35 1.235 0.1235 0.01235 1.235e-3
 @end(code)
 "
-#|  
- (loop :for i :in '(1000000 100000 10000 1000 100 10 1 0.1 0.01 0.001 0.0001 ) :do
-   (format t \"~A \" (mnas-format:round-val_2 (* i 0.1234567891))))
-|#
+  #|  
+  (loop :for i :in '(1000000 100000 10000 1000 100 10 1 0.1 0.01 0.001 0.0001 ) :do ;
+  (format t \"~A \" (mnas-format:round-val_2 (* i 0.1234567891)))) ;
+  |#
   (cond
     ((and (numberp a ) (= a 0))            (format out "~A" (string-trim " " (format nil "~,2F" a))))
     ((and (numberp a ) (< (abs a) 0.01))   (format out "~A" (string-trim " " (format nil "~,3E" a))))
