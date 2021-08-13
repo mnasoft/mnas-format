@@ -13,10 +13,10 @@
 @begin(section)
  @title(Функции)
  @cl:with-package[name="MNAS-FORMAT"](
-  @cl:doc(function round-val-10)
-  @cl:doc(function round-val_2)
+  @cl:doc(function round-1d-list)
   @cl:doc(function round-2d-list)
   @cl:doc(function round-val)
-  @cl:doc(function round-1d-list))
+  @cl:doc(function round-val-10)
+  @cl:doc(function round-val_2))
 @end(section)
 @end(section)
