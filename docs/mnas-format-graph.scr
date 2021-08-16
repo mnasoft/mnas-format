@@ -1,5 +1,0 @@
-  @begin(section) @title(Графы mnas-format)
-  @begin(list)
-   @item(call-graph   @image[src=./call-graph-mnas-format.gv.png]())
-  @end(list)
- @end(section)
