@@ -9,7 +9,7 @@
  @item(одномерного списка (1d-list) значений;) 
  @item(двумерного списка  (2d-list) значений.) 
  @end(list)"
-  :author "Nick Matvyeyev <mnasoft@gmail.com>"
+  :author "Mykola Matvyeyev <mnasoft@gmail.com>"
   :license "GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 or later"    
   :version "0.1.2"
   :serial nil
@@ -20,7 +20,7 @@
 
 (defsystem "mnas-format/docs"
   :description "Зависимости для сборки документации"
-  :author "Nick Matvyeyev <mnasoft@gmail.com>"
+  :author "Mykola Matvyeyev <mnasoft@gmail.com>"
   :license "GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 or later"  
   :depends-on ("mnas-format" "codex" "mnas-package")
   :components ((:module "src/docs"
