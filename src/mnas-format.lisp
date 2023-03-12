@@ -1,6 +1,6 @@
 ;;;; mnas-format.lisp
 
-(defpackage #:mnas-format
+(defpackage :mnas-format
   (:use #:cl ) 
   (:export round-val
 	   round-val_2
@@ -11,7 +11,7 @@
 
 ;;;; (declaim (optimize (compilation-speed 0) (debug 3) (safety 0) (space 0) (speed 0)))
 
-(in-package #:mnas-format)
+(in-package :mnas-format)
 
 (defun round-val (a &optional (out nil))
   "@b(Пример использования:)

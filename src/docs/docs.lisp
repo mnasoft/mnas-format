@@ -1,5 +1,5 @@
 
-(defpackage #:mnas-format/docs
+(defpackage :mnas-format/docs
   (:use #:cl ) 
   (:nicknames "MFORMAT/DOCS")
   (:export make-all)

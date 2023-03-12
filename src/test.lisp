@@ -1,6 +1,6 @@
 ;;;; test.lisp
 
-(in-package #:mnas-format)
+(in-package :mnas-format)
 
 (round-foo 12345678)
 
