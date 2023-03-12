@@ -7,9 +7,7 @@
            round-val-10
            round-1d-list
            round-2d-list
-   ))
-
-;;;; (declaim (optimize (compilation-speed 0) (debug 3) (safety 0) (space 0) (speed 0)))
+           ))
 
 (in-package :mnas-format)
 
